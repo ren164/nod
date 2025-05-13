@@ -6,6 +6,36 @@
     <title>Document</title>
 </head>
 <body>
+    <style>
+    body{
+        background-color: linear-gradient(rgb(black, purple));
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    .btn{
+        background-color: bisque;
+        font: arial;
+        padding: 15px, 30px;
+        border-radius: 15px;
+        border: none;
+        color:cadetblue;
+        transition: ease-in-out 0.4s;
+        width: 200px;
+    }
+    .tituloprincipal{
+        font: 700px;
+        color: aliceblue;
+    }
+    .titulo{
+        text-align: center;
+        margin: 20px 0 80px;
+    }
+    .botoes{
+        display: flex;
+        justify-content: center;
+        margin: 0 200px;
+    }
+    </style>
     <div class="titulo">
         <h1 class="tituloPrincipal">Vamos fazer um curso no
         Senai ?</h1>
@@ -18,5 +48,20 @@
         <button class="btn" id="btn" onclick="desvia()"
         onmouseover="desvia()">NÃO</button>
         </div>
+    </div>
+    <script>
+        function sim() {
+            window.location.href = ""
+        }
+        function desvia () {
+            let btn =document.getElementById("btn")
+            btn.style.position = "absolute"
+            btn.style.bottom = geraPosicao(10,80)
+            btn.style.left = geraPosicao(10,80)
+        }
+        function geraPosicao(min, max) {
+            return(Math.random()* (max - min)+min)+ "%"
+        }
+    </script>
 </body>
 </html>
